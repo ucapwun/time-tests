@@ -1,3 +1,4 @@
+
 name: Python package
 
 on: [push]
@@ -22,5 +23,14 @@ jobs:
           python -m pip install --upgrade pip
           # FIXME Is there anything else that needs to be installed?
       - name: Test with pytest
+
+          
+   # ... (设置 Python 版本的步骤) ...
+
+      - name: Install dependencies
         run: |
-          pytest
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Test with pytest
+        run: pytest
